@@ -1,18 +1,18 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const signup = require('./routes/index');
+const signup = require('./src/routes/index');
 const morgan = require('morgan');
 const passport = require('passport');
 const session = require('express-session');
 const flash = require('connect-flash');
-const receiptsRouter = require('./routes/recipes-route') 
-const mainRecipes = require('./routes/main-recipes') 
-const favoritesRecipes = require('./routes/favorites-recipe') 
+const receiptsRouter = require('./src/routes/recipes-route') 
+const mainRecipes = require('./src/routes/main-recipes') 
+const favoritesRecipes = require('./src/routes/favorites-recipe') 
 
 //Inicializaciones
-require('./db/connectDB');
-require('./passport/local-auth');
+require('./src/db/connectDB');
+require('./src/passport/local-auth');
 
 //Settings
 app.set('port', process.env.PORT || 3000);
@@ -30,20 +30,14 @@ app.use(passport.initialize());
 //se almacena en una sesión
 app.use(passport.session());
 
-
-//Starting Server
-app.listen(app.get('port'), ()=>{
-    console.log('Server on port', app.get('port'));
-})
-
 // Rutas
 app.use('/api/HOME', signup);
 app.use('/', signup); // Puedes ajustar esta ruta según tus necesidades
-app.use(express.static(path.join(__dirname, 'Public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Ruta default
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'Public/HOME.html'));
+  res.sendFile(path.join(__dirname, 'public/HOME.html'));
 });
 
 //midleware para leer el body en el post y put como req.body
@@ -53,3 +47,7 @@ app.use('/api/recetas',receiptsRouter);
 app.use('/api/main',mainRecipes);
 app.use('/api/favorites',favoritesRecipes);
 
+//Starting Server
+app.listen(app.get('port'), ()=>{
+  console.log('Server on port', app.get('port'));
+})
