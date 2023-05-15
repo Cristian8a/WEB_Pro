@@ -1,0 +1,57 @@
+/*navbar*/
+.navbar .navbar-brand.nav-item.nav-link.active {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+}
+
+.navbar .flex-grow-1 .form-inline .form-control {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.navbar-nav {
+    text-align: center;
+}
+
+.navbar {
+    background-color: #000000;
+}
+
+.navbar-brand {
+    color: #ffffff;
+}
+
+.navbar .nav-item {
+    color: #ffffff;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.navbar .fa-user {
+    color: #ffffff;
+    align-self: self-end;
+}
+
+.navbar .fa-search {
+    color: #ffffff;
+    align-self: self-end;
+}
+
+
+/*Filtros*/
+h1 {
+    margin: 25px;
+    text-align: center;
+    color: dimgrey;
+}
+
+#search {
+    margin: auto;
+}
+
+.search_input {
+    margin: auto;
+}
+
+#search_button {
+    width: 15%;
+    margin: auto;
+}

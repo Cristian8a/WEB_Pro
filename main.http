@@ -1,0 +1,36 @@
+@host = http://localhost:3010
+
+###
+GET {{host}}/api/main/Lv6zuByaCcaM-dQNdGIu6
+x-token: admin
+###
+GET {{host}}/api/main/
+x-token: admin
+###
+POST {{host}}/api/main
+x-token: admin
+Content-Type: application/json
+
+{
+    "autor": "Rebeca",
+    "descripcion": "cereal con leche",
+    "titulo": "Cereal",
+    "ingredientes": "leche y otros",
+    "dificultad": 3,
+    "imageUrl": "https://images.unsplash.com/photo-1602253057119-44d745d9b860?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZGlzaHxlbnwwfHwwfHw%3D&w=1000&q=80"
+}
+
+###
+PUT {{host}}/api/main/Lv6zuByaCcaM-
+x-token:admin
+Content-Type: application/json
+
+{
+    "titulo":"Funcional",
+    "dificultad":3,
+    "ingredientes": "cebolla"
+}
+
+###
+DELETE {{host}}/api/main/yhVlTBo8DtMl8L-pLWKVB
+x-token: admin

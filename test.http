@@ -1,0 +1,36 @@
+@host = http://localhost:3010
+
+###
+GET {{host}}/api/recetas/Fh6JqtE5Ur3x0LLUgs_fi
+x-token: admin
+###
+GET {{host}}/api/recetas/
+x-token: admin
+###
+POST {{host}}/api/recetas
+x-token: admin
+Content-Type: application/json
+
+{
+    "autor": "daniela ",
+    "descripcion": "es un test",
+    "titulo": "lorem",
+    "ingredientes": "pato fish",
+    "dificultad": 2,
+    "imageUrl": "https://media.istockphoto.com/id/1144823591/es/foto/espaguetis-en-un-plato-sobre-un-fondo-blanco.jpg?s=612x612&w=is&k=20&c=qeTGBSzY0sip4zY-2MdwYaqou2pgE6tVkctsIhf2fgY="
+}
+
+###
+PUT {{host}}/api/recetas/Lv6zuByaCcaM-
+x-token:admin
+Content-Type: application/json
+
+{
+    "titulo":"Funcional",
+    "dificultad":3,
+    "ingredientes": "cebolla"
+}
+
+###
+DELETE {{host}}/api/recetas/yhVlTBo8DtMl8L-pLWKVB
+x-token: admin
